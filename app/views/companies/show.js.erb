@@ -1,0 +1,5 @@
+$('#dialog h3').html("<i class='glyphicon'></i> Company Details");
+ console.log("its working");
+$(".modal-body").html("<%= escape_javascript(render partial: 'company', locals: { no_of_operations: @no_of_operations, avg_amount_operation: @avg_amount_operation, max_amount_of_opt: @max_amount_of_opt, no_of_opt_status_accepted: @no_of_opt_status_accepted} ) %>");
+
+$('#dialog').modal("show");

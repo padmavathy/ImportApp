@@ -1,0 +1,5 @@
+
+$("#search_result").css("display", "block");
+$("#search_result").html("<%= escape_javascript(render partial: 'search_result', locals: { search_results: @search_results} ) %>");
+$("#company_index").css("display", "none");
+

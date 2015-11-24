@@ -1,0 +1,56 @@
+<% flash.each do |key, value| %>
+    <div class="alert alert-danger alert-<%= key %>"><%= value %></div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>CSV Upload</h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-body">
+<% unless @operations.empty? %>
+    <table class="table table-striped">
+      <tr>
+        <th><h4>Details of File Processed</h4></th>
+        <th> <h4> Count </h4></th>
+      </tr>
+      <tr>
+        <td>
+          <h5 class="panel-title">
+            Number Of Processed Rows
+          </h5>
+        </td>
+        <td>
+          <%= @operations_count%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5 class="panel-title">
+            Number of Successfully Imported Rows
+          </h5>
+        </td>
+        <td>
+          <%= @import_successed_rows%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h5 class="panel-title">
+            Number of Failed Imported Rows
+          </h5>
+        </td>
+        <td>
+          <%= @import_failed_rows%>
+        </td>
+      </tr>
+    </table>
+    <%end%>
+   </div>
+  </div>
+ </div>

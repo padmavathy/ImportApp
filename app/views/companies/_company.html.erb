@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th><h4>Details of Operations</h4></th>
+          <th> <h4> Count </h4></th>
+        </tr>
+        <tr>
+          <td>
+            <h5 class="panel-title">
+              Number Of Operation
+            </h5>
+          </td>
+          <td>
+            <%= @no_of_operations%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5 class="panel-title">
+              Average amount Of Operation
+            </h5>
+          </td>
+          <td>
+            <%= @avg_amount_operation%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5 class="panel-title">
+              Highest amount of operations
+            </h5>
+          </td>
+          <td>
+            <%= @max_amount_of_opt%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5 class="panel-title">
+              Number of operations with status Accepted
+            </h5>
+          </td>
+          <td>
+            <%= @no_of_opt_status_accepted%>
+          </td>
+        </tr>
+      </table>
+
+      <span> <%= link_to "Download CSV", company_path(format: "csv"), class: "btn btn-primary" %>
+</span>
+    </div>
+  </div>
+</div>

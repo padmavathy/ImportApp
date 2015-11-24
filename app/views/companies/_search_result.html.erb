@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Search Results </h2>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th><h4>Operation ID</h4></th>
+          <th><h4>Invoice Number</h4></th>
+          <th><h4>Invoice Date</h4></th>
+          <th><h4>Status</h4></th>
+          <th><h4>Category</h4></th>
+          <th><h4>Reporter</h4></th>
+          <th><h4>Company Name</h4></th>
+        </tr>
+        <% search_results.each do |result| %>
+            <tr>
+              <td>
+                          <%= "Operation #{result.id}"%>
+              </td>
+              <td>
+                    <%= result.invoice_num%>
+              </td>
+              <td>
+                    <%= result.invoice_date%>
+              </td>
+              <td>
+                    <%= result.status%>
+              </td>
+              <td>
+                    <%= result.kind%>
+              </td>
+              <td>
+                    <%= result.reporter%>
+              </td>
+              <td>
+                    <%= result.company.nil? ? "Undefined" : result.company.name %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+<%= js_will_paginate search_results, :params => { :my_excluded_param => nil } %>
+
